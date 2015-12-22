@@ -23,13 +23,11 @@ public class Lizard : MonoBehaviour {
 		//EXIT method if it's not a Defender object
 		if(!colliderGameObj.GetComponent<Defender>())
 		{
-			Debug.Log("NOT a DEFENDER: | " + colliderGameObj);
 			return;
 		}
 		
 		animator.SetBool("IsAttacking", true);
 		attacker.Attack(colliderGameObj);
-		Debug.Log("Lizard attacking " + colliderGameObj);
 		
 	}	
 }
