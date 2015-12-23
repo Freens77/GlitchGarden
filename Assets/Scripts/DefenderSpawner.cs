@@ -4,13 +4,11 @@ using System.Collections;
 public class DefenderSpawner : MonoBehaviour {
 
 	public Camera myCamera;
-	
 	public GameObject parentObject;
 	
 	
 	void Start () {
 		parentObject = GameObject.Find("Defenders");
-		
 		
 		if(!parentObject)
 		{
@@ -18,6 +16,7 @@ public class DefenderSpawner : MonoBehaviour {
 		}
 	}
 	
+
 	void Update () {
 	
 	}
@@ -39,6 +38,8 @@ public class DefenderSpawner : MonoBehaviour {
 		Vector3 mouseClickPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, distanceFromCamera);
 		Vector2 worldPos = myCamera.ScreenToWorldPoint(mouseClickPos);
 	
+		Debug.Log("worldCoords: " + mouseClickPos);
+	
 		return GetGridCentreWorldPosition(worldPos);
 	}
 	
@@ -47,8 +48,7 @@ public class DefenderSpawner : MonoBehaviour {
 		float x = Mathf.Round(rawWorldPos.x);
 		float y = Mathf.Round(rawWorldPos.y);
 		
-		return new Vector2(x,y);
-		
+		return new Vector2(x,y);		
 	}
 	
 	
