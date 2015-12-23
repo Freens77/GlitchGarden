@@ -7,7 +7,7 @@ public class Button : MonoBehaviour {
 
 	private Button[] buttonArrary;
 	
-	private static GameObject selectedDefender;
+	public static GameObject selectedDefender;
 
 	void Start () {
 		buttonArrary = GameObject.FindObjectsOfType<Button>();
@@ -28,4 +28,9 @@ public class Button : MonoBehaviour {
 		GetComponent<SpriteRenderer>().color = Color.white;
 		selectedDefender = defenderPrefab;
 	}
+	
+	public GameObject GetSelectedDefender() {
+		return selectedDefender;
+	}
+	
 }
